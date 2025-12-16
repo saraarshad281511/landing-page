@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Project 1</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <div class="brand">
+                <span class="logo"></span>
+                <span>A mini project</span>
+            </div>
+            <nav>
+                <button class="hamburger" id="hamburger">≡</button>
+                <ul id="navlist">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <button class="mute" id="quizBtn">Quick Quiz</button>
+                <button class="btn" id="darkToggle">Dark</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!--Hero layout-->
+        <section id="home" class="hero">
+            <div class="hero-left">
+                <h1 class="title">Build a website with JS interaction</h1>
+                <p class="subtitle">Learn HTML, CSS, and JS</p>
+                <div class="cta">
+                    <button class="btn" onclick="scrollToSection('features')">Start building</button>
+                    <button class="mute" onclick="alert('Tip: Try the quiz to practice JS')">Tip</button>
+                </div>
+            </div>
+            <div class="hero-right">
+                <div class="card-hero">JavaScript studio</div>
+            </div>
+
+        </section>
+
+        <!--Features-->
+        <section id="features">
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h4>Responsive Navbar</h4>
+                    <p class="muted">A simple Nav that turns into a small hamburger on small screens</p>
+                </div>
+                <div class="feature">
+                    <h4>Animated Hero</h4>
+                    <p class="muted">Small animations using CSS keyframes</p>
+                </div>
+                <div class="feature">
+                    <h4>Image Carousal</h4>
+                    <p class="muted">Navigate through images with JS</p>
+                </div>
+
+                <div class="feature">
+                    <h4>Mini Quiz</h4>
+                    <p class="muted">Interactive model quiz with scoring</p>
+                </div>
+            </div>
+        </section>
+
+        <!--Gallery or image carousal-->
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="carousal">
+                <div class="slides" id="slides">
+                    <div class="slide">
+                        <img
+                            src="https://images.unsplash.com/photo-1503803548695-c2a7b4a5b875?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <div>
+                            <h4>Sunset</h4>
+                            <p class="muted">A peaceful sunset</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img
+                            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                        <div>
+                            <h4>Mountains</h4>
+                            <p class="muted">Misty mountain</p>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <img
+                            src=https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D>
+                        <div>
+                            <h4>Beach</h4>
+                            <p class="muted">sandy beach</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="controls">
+                    <button class="control" id="prev">
+                        < </button>
+                            <button class="control" id="next">></button>
+                </div>
+            </div>
+        </section>
+
+        <!--Quiz Modal-->
+        <div class="modal-bg" id="modalBg">
+            <div class="modal">
+                <h3>Mini Quiz</h3>
+                <p class="muted">Pick the best answer and press submit</p>
+                <div id="quizArea">
+                    <div>
+                        <p><strong>1.</strong>What language makes a webpage move and react?</p>
+                        <label><input type="radio" name="q1" value="a">HTML</label><br>
+                        <label><input type="radio" name="q1" value="b">CSS</label><br>
+                        <label><input type="radio" name="q1" value="c">JavaScript</label><br>
+                    </div>
+                    <div style="margin-top: 10px;">
+                        <p><strong>2.</strong>Which CSS rule center a flex item</p>
+                        <label><input type="radio" name="q2" value="a">align-items: center</label><br>
+                        <label><input type="radio" name="q2" value="b">display:block</label><br>
+                        <label><input type="radio" name="q2" value="c">float:left</label><br>
+                    </div>
+
+                    <div style="margin-top: 12px;display: flex; gap:8px; justify-content: flex-end;">
+                        <button class="mute" id="closeQuiz">Close</button>
+                        <button class="btn" id="submitQuiz">Submit</button>
+                    </div>
+                </div>
+                <div id="quizResult" style="display: none; margin-top: 12px;"></div>
+            </div>
+        </div>
+        <!--Contact-->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact">
+                <div class="glass">
+                    <h4>Send a message</h4>
+                    <p class="muted">A Simple Form</p>
+                    <label>Name</label>
+                    <input id="name" placeholder="Your name" />
+                    <label>Email</label>
+                    <input id="email" placeholder="you@example.com" />
+                    <label>Message</label>
+                    <textarea id="message" placeholder="Hello.."></textarea>
+                    <div style="margin-top: 10px; display: flex; gap: 8px; justify-content: flex-end;">
+                        <button class="mute" id="clearForm">Clear</button>
+                        <button class="btn" id="sendBtn">Send</button>
+                    </div>
+                    <div id="formMsg" style="margin-top: 10px;color: var(--muted)"></div>
+
+                    <div class="glass">
+                        <h4>About this project</h4>
+                        <p class="muted">Build a website with HTML, CSS, and JS</p>
+                        <p style="margin-top: 12px;">
+                            <button class="mute" id="likeBtn">Like</button>
+                            <span id="likesCount" style="margin-left: 8px; color: var(--muted)">0 liked</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <footer>
+            Mini Studio - HTML, CSS, JS project - Copyrights reserved &copy;
+        </footer>
+    </main>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
